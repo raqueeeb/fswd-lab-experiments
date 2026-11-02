@@ -1,0 +1,19 @@
+{
+  "name": "exp12-mern-portfolio-deploy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FSWD Lab Experiment 12 - MERN portfolio prepared for cloud deployment (Render + MongoDB Atlas)",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "postinstall": "cd server && npm install && cd .. && cd client && npm install --include=dev",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "seed": "npm run seed --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "verify": "node verify-deployment.js"
+  },
+  "license": "MIT"
+}
