@@ -1,0 +1,22 @@
+# Render Blueprint - deploys the MERN portfolio as ONE web service.
+# Express serves both the REST API (/api/...) and the built React app,
+# so no separate static site is needed.
+#
+# This file lives in experiment-12/program. When creating the Blueprint on Render,
+# set the Blueprint file path to experiment-12/program/render.yaml
+# (or follow the manual "Web Service" steps in DEPLOY_STEPS.md).
+
+services:
+  - type: web
+    name: fswd-mern-portfolio
+    runtime: node
+    plan: free
+    rootDir: experiment-12/program      # folder inside the GitHub repository
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGO_URI
+        sync: false                     # secret: Render asks for it in the dashboard
+      - key: NODE_ENV
+        value: production
