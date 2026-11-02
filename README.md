@@ -1,118 +1,90 @@
 # FSWD Lab Experiments
 
-**Full Stack Web Development Lab (U23CS7L2) – B.E. CSE, VII Semester**
-
-All 12 lab experiments, from a plain HTML page to a deployed MERN application, with runnable code and viva questions & answers for every experiment.
+**Full Stack Web Development Lab (U23CS7L2) – B.E. CSE, VII Semester** · 12 experiments from a plain HTML page to a deployed MERN app, with tested code and viva Q&A for every experiment.
 
 ![Experiments](https://img.shields.io/badge/experiments-12-blue) ![Viva questions](https://img.shields.io/badge/viva_questions-72-green) ![Node.js](https://img.shields.io/badge/node-%3E%3D20.19-brightgreen) ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
 
-[Quick Start](#1-quick-start--commands-to-run-all-experiments) · [Experiment Index](#3-experiment-index) · [Prerequisites](#5-prerequisites-and-installation) · [Viva Preparation](#7-viva-preparation) · [Repository Structure](#8-repository-structure)
-
----
-
 ## 1. Quick Start – Commands to Run All Experiments
 
+> **How to use these commands**
+> - Written for **Windows PowerShell** (the default terminal in VS Code). macOS/Linux changes are listed [at the end of this section](#macos--linux).
+> - A block that starts with `cd experiment-…` must be run from the **repository folder** `fswd-lab-experiments`. To get back there afterwards, run `cd ..\..`
+> - Blocks marked **(same terminal)** continue in the folder you are already in. **Terminal 2** means: open a second terminal in the repository folder.
+> - Stop a running server with **Ctrl + C**.
+
+### Step 0 – Download the repository and check Node.js (once)
+
 ```powershell
-git clone https://github.com/Mohammed-Abdul-Raqueeb/fswd-lab-experiments.git
+git clone https://github.com/raqueeeb/fswd-lab-experiments.git
 cd fswd-lab-experiments
+node -v
+npm -v
 ```
 
-> **Read this first**
-> - Commands are written for **Windows (PowerShell or Command Prompt)**. On **macOS/Linux** use `/` instead of `\`, `cp` instead of `copy`, and `open` (macOS) / `xdg-open` (Linux) instead of `start`.
-> - **Every block starts from the repository root** (`fswd-lab-experiments`). After an experiment, return with `cd ..\..`.
-> - Stop any running server with **Ctrl + C**.
-
-### At a glance
-
-| # | Experiment | Technology | Run with | Open |
-|---|---|---|---|---|
-| 01 | [Personal Portfolio Page using HTML](experiment-01/) | HTML5 | `start index.html` | browser |
-| 02 | [Styling the Portfolio with CSS](experiment-02/) | CSS3 | `start index.html` | browser |
-| 03 | [JavaScript Basics](experiment-03/) | JavaScript | `node basics.js` | terminal / browser |
-| 04 | [DOM Manipulation & Events](experiment-04/) | JavaScript DOM | `start index.html` | browser |
-| 05 | [Contact Form Validation](experiment-05/) | Regex, try-catch | `start index.html` | browser |
-| 06 | [Fetch API & Async/Await](experiment-06/) | Fetch API | `start index.html` | browser (internet) |
-| 07 | [Portfolio with React.js](experiment-07/) | React + Vite | `npm install` → `npm run dev` | http://localhost:5173 |
-| 08 | [Node.js Fundamentals](experiment-08/) | Node.js core | `node eventloop.js` / `node server.js` | http://localhost:5000 |
-| 09 | [RESTful API with Express.js](experiment-09/) | Express | `npm install` → `npm start` | http://localhost:5001 |
-| 10 | [MongoDB & Mongoose CRUD](experiment-10/) | MongoDB, Mongoose | `npm install` → `npm start` | http://localhost:5002 |
-| 11 | [Full-Stack Integration (MERN)](experiment-11/) | MERN | `npm install` → `npm run dev:server` + `npm run dev:client` | http://localhost:5173 |
-| 12 | [Deployment of the MERN App](experiment-12/) | Render + Atlas | `npm run build` → `npm start` | http://localhost:5004 / your Render URL |
+Node.js **20.19+ or 22.12+** is needed for Experiments 07–12 (Experiments 01–06 only need a browser).
 
 ---
 
 ### Experiment 01 – Personal Portfolio Page using HTML
-
-**Requirements:** a web browser · **Technology:** HTML5
 
 ```powershell
 cd experiment-01\program
 start index.html
 ```
 
-**Expected output:** an unstyled page with a header + nav links, a profile image and bio, a bordered *Skills & Ratings* table (5 skills, rated out of 5), three projects, and a contact form (Name, Email, Message, Send/Clear).
+**Expected:** portfolio page with a header + nav links, profile image, *Skills & Ratings* table and a contact form.
 
 ### Experiment 02 – Styling the Portfolio with CSS (Box Model, Flexbox & Grid)
-
-**Requirements:** a web browser · **Technology:** HTML5, CSS3
 
 ```powershell
 cd experiment-02\program
 start index.html
 ```
 
-**Expected output:** a styled portfolio with a dark-blue Flexbox header and a 6-card Grid gallery. Press **F12 → Ctrl + Shift + M** and resize: the gallery shows **3 columns** on desktop, **2** on tablets (≤ 768px, header stacks) and **1** on phones (≤ 480px).
+**Expected:** styled, responsive portfolio. Press **F12 → Ctrl + Shift + M** and resize: gallery shows 3 columns (desktop) → 2 (≤ 768px) → 1 (≤ 480px).
 
 ### Experiment 03 – JavaScript Basics — Operators, Control Flow, Arrays, Functions, Strings
-
-**Requirements:** Node.js (or just a browser) · **Technology:** JavaScript
 
 ```powershell
 cd experiment-03\program
 node basics.js
+start basics.html
 ```
 
-Browser alternative: `start basics.html` (output on the page and in the F12 console).
-
-**Expected output:** six labelled sections of results, e.g. `a ** 2 (exponent): 144`, `Grade for 78 marks (if-else): B`, `Factorial of 5 (while loop): 120`, `filter() names ending in "App": Weather App, Quiz App, Chat App`, ending with a formatted skill summary and `Average skill rating: 2.8`.
+**Expected:** six sections of results in the terminal (e.g. `Factorial of 5 (while loop): 120`, `Grade for 78 marks (if-else): B`); the same output on the web page and in the F12 console.
 
 ### Experiment 04 – DOM Manipulation & Events
-
-**Requirements:** a web browser · **Technology:** HTML5, CSS3, JavaScript
 
 ```powershell
 cd experiment-04\program
 start index.html
 ```
 
-**Expected output:** 3 project cards rendered from a JavaScript array. **Add Project** (button or Enter) creates a card, **Remove** deletes one, hovering highlights a card, the search box filters cards (Esc clears it), and **Dark Mode** switches the theme (remembered after reload).
+**Expected:** 3 project cards created by JavaScript – try **Add Project**, **Remove**, hovering, the search box (Esc clears it) and **Dark Mode** (remembered after reload).
 
 ### Experiment 05 – Contact Form Validation using Regex & Exception Handling
-
-**Requirements:** a web browser · **Technology:** JavaScript regex, try / catch / finally
 
 ```powershell
 cd experiment-05\program
 start index.html
 ```
 
-**Expected output:** submitting empty/invalid data (e.g. `A1`, `ananya@@web`, `12345`, `hi`) turns each field red with its own message plus *"Please fix the 4 highlighted field(s)…"*. Valid data (e.g. `Ananya Rao`, `ananya@example.com`, `9876543210`, a 10+ character message) shows **"Form submitted successfully!"**.
+**Expected:** invalid input (e.g. `A1`, `ananya@@web`, `12345`, `hi`) shows red errors under each field; valid input (`Ananya Rao`, `ananya@example.com`, `9876543210`, a 10+ character message) shows **"Form submitted successfully!"**.
 
 ### Experiment 06 – Fetch API & Async/Await
 
-**Requirements:** a web browser + internet · **Technology:** Fetch API, async/await, GitHub REST API
+Needs internet.
 
 ```powershell
 cd experiment-06\program
 start index.html
 ```
 
-**Expected output:** "Loading data…" then the GitHub card for `octocat` (avatar, name, repos/followers/following) and its 5 latest repositories. Search any username; an unknown one shows *"User not found."*
-GitHub allows 60 unauthenticated requests per hour per IP – on a busy shared network you may see the (handled) *"rate limit reached"* message instead.
+**Expected:** "Loading data…" then the live GitHub card for `octocat` with its latest repositories; type any username and press **Fetch**. (GitHub allows 60 requests/hour per IP – on busy networks you may see the handled "rate limit reached" message.)
 
 ### Experiment 07 – Rebuilding the Portfolio with React.js
 
-**Requirements:** Node.js **20.19+ or 22.12+** · **Technology:** React 19, Vite 8
+**Development server:**
 
 ```powershell
 cd experiment-07\program
@@ -120,126 +92,193 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:5173**. (Production build: `npm run build` then `npm run preview` → http://localhost:4173.)
+Open **http://localhost:5173**. Press Ctrl + C to stop.
 
-**Expected output:** the portfolio built from React components – theme toggle (`useState` + `useEffect`), skills table, add/remove/search projects, a GitHub card fetched in `useEffect`, and a validated contact form.
+**Production build (same terminal):**
+
+```powershell
+npm run build
+npm run preview
+```
+
+Open **http://localhost:4173**.
+
+**Expected:** the React portfolio – theme toggle, skills table with stars, add/remove/search projects, GitHub card loaded with `useEffect`, validated contact form.
 
 ### Experiment 08 – Node.js Fundamentals — Event Loop & HTTP Server
 
-**Requirements:** Node.js · **Technology:** Node.js core modules (`http`, `fs`, `path`, `os`, `url`) – nothing to install
-
 ```powershell
 cd experiment-08\program
-node -v
-npm -v
 node eventloop.js
 node fileDemo.js
 node server.js
 ```
 
-With the server running, open **http://localhost:5000**, `/about`, `/projects`, `/projects?id=2`, `/system-info` and `/notes`.
+With the server running, open:
 
-**Expected output:** `eventloop.js` prints steps **1 → 9** in order (sync code → `nextTick` → Promise → `setTimeout` → `setImmediate`); `fileDemo.js` shows the async read finishing *after* the next line; the server answers each route with text or JSON and `404 - Route not found` otherwise.
+- http://localhost:5000
+- http://localhost:5000/about
+- http://localhost:5000/projects
+- http://localhost:5000/projects?id=2
+- http://localhost:5000/system-info
+- http://localhost:5000/notes
+
+**Expected:** `eventloop.js` prints steps 1 → 9 in order; `fileDemo.js` shows the async file read finishing after the next line; the server answers each URL with text/JSON (any other URL → `404 - Route not found`).
 
 ### Experiment 09 – Building a RESTful API with Express.js
 
-**Requirements:** Node.js · **Technology:** Express 5, cors
+**Terminal 1 – start the API:**
 
 ```powershell
-# Terminal 1 - start the API
 cd experiment-09\program
 npm install
 npm start
 ```
 
+**Terminal 2 – test the API:**
+
 ```powershell
-# Terminal 2 - call every route
 cd experiment-09\program
 npm run test:api
+curl.exe http://localhost:5001/api/projects
+Invoke-RestMethod -Method Post -Uri http://localhost:5001/api/contact -ContentType "application/json" -Body '{"name":"Rahul Kumar","email":"rahul@example.com","message":"Hi, interested in collaborating!"}'
+curl.exe http://localhost:5001/api/messages
 ```
 
-API at **http://localhost:5001/api/projects**.
-
-**Expected output:** Terminal 1 logs every request; Terminal 2 prints `13 passed, 0 failed` (GET/POST/DELETE projects, `POST /api/contact` → 201, validation errors → 400, unknown routes → 404). In PowerShell use `curl.exe`, not `curl`, for manual requests.
+**Expected:** `13 passed, 0 failed`, the projects list as JSON, `Message received, thank you!`, and the saved message in `/api/messages`.
 
 ### Experiment 10 – MongoDB & Mongoose — CRUD Operations
 
-**Requirements:** Node.js + a **MongoDB Atlas** connection string ([how to get one](experiment-10/README.md#step-1--create-a-free-mongodb-atlas-cluster)) or a local MongoDB server · **Technology:** MongoDB, Mongoose 9, Express, dotenv
+Needs a MongoDB connection string – [get a free one from MongoDB Atlas](experiment-10/README.md#step-1--create-a-free-mongodb-atlas-cluster).
+
+**Terminal 1 – setup:**
 
 ```powershell
-# Terminal 1
 cd experiment-10\program
 npm install
 copy .env.example .env
 notepad .env
+```
+
+In Notepad, paste your connection string after `MONGO_URI=`, **save and close**.
+
+**Terminal 1 – run (same terminal):**
+
+```powershell
 npm run seed
 npm start
 ```
 
-Put your connection string after `MONGO_URI=` in `.env`, save, then run the last two commands.
+**Terminal 2 – test full CRUD:**
 
 ```powershell
-# Terminal 2
 cd experiment-10\program
 npm run test:api
+curl.exe http://localhost:5002/api/projects
 ```
 
-**Expected output:** `Inserted 3 sample projects.`, `MongoDB connected (database: portfolioDB)`, `Server running on http://localhost:5002`; Terminal 2 prints `17 passed, 0 failed` (full CRUD on **projects** and **contact messages**). The documents are visible in Atlas → *Browse Collections*.
+**Expected:** `Inserted 3 sample projects.`, `MongoDB connected (database: portfolioDB)`, `Server running on http://localhost:5002`, then `17 passed, 0 failed` in Terminal 2.
 
 ### Experiment 11 – Full-Stack Integration (React + Express + MongoDB)
 
-**Requirements:** Node.js 20.19+/22.12+ and a MongoDB connection string · **Technology:** MERN (MongoDB, Express, React, Node.js)
+**Terminal 1 – setup:**
 
 ```powershell
-# Setup (once) - npm install also installs server\ and client\
 cd experiment-11\program
 npm install
 copy server\.env.example server\.env
 notepad server\.env
-npm run seed
 ```
 
+Paste your connection string after `MONGO_URI=`, **save and close**. (`npm install` here also installs `server\` and `client\`.)
+
+**Terminal 1 – start the API (same terminal):**
+
 ```powershell
-# Development - Terminal 1 (API, port 5004)
-cd experiment-11\program
+npm run seed
 npm run dev:server
 ```
 
+**Terminal 2 – start React:**
+
 ```powershell
-# Development - Terminal 2 (React, port 5173)
 cd experiment-11\program
 npm run dev:client
 ```
 
-Open **http://localhost:5173**. Single-server production mode: `npm run build` then `npm start` → **http://localhost:5004**.
+Open **http://localhost:5173**.
 
-**Expected output:** the React portfolio loads projects **live from MongoDB** (with a loading message), **Add/Remove** change the database, and the contact form shows *"Message received, thank you! (saved to MongoDB)"*. If the API is down an error with a **Retry** button appears.
+**Production mode (optional)** – stop both terminals with Ctrl + C, then in Terminal 1:
+
+```powershell
+npm run build
+npm start
+```
+
+Open **http://localhost:5004** (one server for the API and the React app).
+
+**Expected:** projects load live from MongoDB, **Add/Remove** change the database, and the contact form shows *"Message received, thank you! (saved to MongoDB)"*.
 
 ### Experiment 12 – Deployment of the MERN Portfolio Application
 
-**Requirements:** everything from Experiment 11 + free **GitHub, MongoDB Atlas and Render** accounts · **Technology:** Render, MongoDB Atlas (optional Vercel/Netlify)
-
-Test the production build locally:
+**Terminal 1 – setup:**
 
 ```powershell
 cd experiment-12\program
 npm install
 copy server\.env.example server\.env
 notepad server\.env
+```
+
+Paste your connection string after `MONGO_URI=`, **save and close**.
+
+**Terminal 1 – production build and start (same terminal):**
+
+```powershell
 npm run seed
 npm run build
 npm start
 ```
 
+**Terminal 2 – verify:**
+
 ```powershell
-# second terminal
 cd experiment-12\program
 node verify-deployment.js http://localhost:5004 --contact
 ```
 
-Then deploy by following **[experiment-12/program/DEPLOY_STEPS.md](experiment-12/program/DEPLOY_STEPS.md)** – Render Web Service with Root Directory `experiment-12/program`, Build `npm install && npm run build`, Start `npm start`, environment variables `MONGO_URI` and `NODE_ENV=production`. Check the live site with `node verify-deployment.js https://<your-service>.onrender.com`.
+**Deploy to the cloud:** follow [experiment-12/program/DEPLOY_STEPS.md](experiment-12/program/DEPLOY_STEPS.md). Render → New → Web Service settings:
 
-**Expected output:** `PASS` for *Frontend loads*, *API health*, *Projects from MongoDB* and *Contact form*, then **"Deployment looks good!"**; the portfolio is reachable at your public `onrender.com` URL.
+- **Root Directory:** `experiment-12/program`
+- **Build Command:** `npm install && npm run build`
+- **Start Command:** `npm start`
+- **Environment variables:** `MONGO_URI` and `NODE_ENV=production`
+
+Then check the live site:
+
+```powershell
+cd experiment-12\program
+node verify-deployment.js https://<your-service>.onrender.com
+```
+
+**Expected:** four `PASS` lines (frontend, API health, projects from MongoDB, contact form) and **"Deployment looks good!"**.
+
+---
+
+### macOS / Linux
+
+Use the same commands with these changes:
+
+| Windows (PowerShell) | macOS | Linux |
+|---|---|---|
+| `cd experiment-01\program` | `cd experiment-01/program` | `cd experiment-01/program` |
+| `start index.html` | `open index.html` | `xdg-open index.html` |
+| `copy .env.example .env` | `cp .env.example .env` | `cp .env.example .env` |
+| `notepad .env` | `nano .env` | `nano .env` |
+| `curl.exe …` | `curl …` | `curl …` |
+| `cd ..\..` | `cd ../..` | `cd ../..` |
+
+Problems? See [Troubleshooting](#troubleshooting).
 
 ---
 
@@ -262,20 +301,20 @@ The sample portfolio data (the name *Ananya Rao*, skills and projects) comes fro
 
 ## 3. Experiment Index
 
-| # | Experiment (name from the lab manual) | Program | Viva |
-|---|---|---|---|
-| 01 | Personal Portfolio Page using HTML | [program](experiment-01/program/) | [6 questions](experiment-01/viva/README.md) |
-| 02 | Styling the Portfolio with CSS (Box Model, Flexbox & Grid) | [program](experiment-02/program/) | [6 questions](experiment-02/viva/README.md) |
-| 03 | JavaScript Basics — Operators, Control Flow, Arrays, Functions, Strings | [program](experiment-03/program/) | [6 questions](experiment-03/viva/README.md) |
-| 04 | DOM Manipulation & Events | [program](experiment-04/program/) | [6 questions](experiment-04/viva/README.md) |
-| 05 | Contact Form Validation using Regex & Exception Handling | [program](experiment-05/program/) | [6 questions](experiment-05/viva/README.md) |
-| 06 | Fetch API & Async/Await | [program](experiment-06/program/) | [6 questions](experiment-06/viva/README.md) |
-| 07 | Rebuilding the Portfolio with React.js | [program](experiment-07/program/) | [6 questions](experiment-07/viva/README.md) |
-| 08 | Node.js Fundamentals — Event Loop & HTTP Server | [program](experiment-08/program/) | [6 questions](experiment-08/viva/README.md) |
-| 09 | Building a RESTful API with Express.js | [program](experiment-09/program/) | [6 questions](experiment-09/viva/README.md) |
-| 10 | MongoDB & Mongoose — CRUD Operations | [program](experiment-10/program/) | [6 questions](experiment-10/viva/README.md) |
-| 11 | Full-Stack Integration (React + Express + MongoDB) | [program](experiment-11/program/) | [6 questions](experiment-11/viva/README.md) |
-| 12 | Deployment of the MERN Portfolio Application | [program](experiment-12/program/) | [6 questions](experiment-12/viva/README.md) |
+| # | Experiment (name from the lab manual) | Technology | Runs at | Program | Viva |
+|---|---|---|---|---|---|
+| 01 | Personal Portfolio Page using HTML | HTML5 | browser | [program](experiment-01/program/) | [6 questions](experiment-01/viva/README.md) |
+| 02 | Styling the Portfolio with CSS (Box Model, Flexbox & Grid) | CSS3 | browser | [program](experiment-02/program/) | [6 questions](experiment-02/viva/README.md) |
+| 03 | JavaScript Basics — Operators, Control Flow, Arrays, Functions, Strings | JavaScript | terminal / browser | [program](experiment-03/program/) | [6 questions](experiment-03/viva/README.md) |
+| 04 | DOM Manipulation & Events | JavaScript DOM | browser | [program](experiment-04/program/) | [6 questions](experiment-04/viva/README.md) |
+| 05 | Contact Form Validation using Regex & Exception Handling | Regex, try-catch | browser | [program](experiment-05/program/) | [6 questions](experiment-05/viva/README.md) |
+| 06 | Fetch API & Async/Await | Fetch API | browser (internet) | [program](experiment-06/program/) | [6 questions](experiment-06/viva/README.md) |
+| 07 | Rebuilding the Portfolio with React.js | React + Vite | http://localhost:5173 | [program](experiment-07/program/) | [6 questions](experiment-07/viva/README.md) |
+| 08 | Node.js Fundamentals — Event Loop & HTTP Server | Node.js core modules | terminal, http://localhost:5000 | [program](experiment-08/program/) | [6 questions](experiment-08/viva/README.md) |
+| 09 | Building a RESTful API with Express.js | Express | http://localhost:5001 | [program](experiment-09/program/) | [6 questions](experiment-09/viva/README.md) |
+| 10 | MongoDB & Mongoose — CRUD Operations | MongoDB, Mongoose | http://localhost:5002 | [program](experiment-10/program/) | [6 questions](experiment-10/viva/README.md) |
+| 11 | Full-Stack Integration (React + Express + MongoDB) | MERN | http://localhost:5173 (dev) / 5004 | [program](experiment-11/program/) | [6 questions](experiment-11/viva/README.md) |
+| 12 | Deployment of the MERN Portfolio Application | Render + Atlas | http://localhost:5004 / your Render URL | [program](experiment-12/program/) | [6 questions](experiment-12/viva/README.md) |
 
 Syllabus statements (from the *List of Experiments*):
 
@@ -322,7 +361,7 @@ Syllabus statements (from the *List of Experiments*):
 Installation:
 
 ```powershell
-git clone https://github.com/Mohammed-Abdul-Raqueeb/fswd-lab-experiments.git
+git clone https://github.com/raqueeeb/fswd-lab-experiments.git
 cd fswd-lab-experiments
 ```
 
