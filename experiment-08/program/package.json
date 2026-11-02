@@ -1,0 +1,17 @@
+{
+  "name": "exp08-node-fundamentals",
+  "version": "1.0.0",
+  "description": "FSWD Lab Experiment 08 - Node.js event loop, core-module HTTP server, fs and path",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "eventloop": "node eventloop.js",
+    "files": "node fileDemo.js"
+  },
+  "keywords": [
+    "nodejs",
+    "event-loop",
+    "http"
+  ],
+  "license": "MIT"
+}
