@@ -1,0 +1,244 @@
+/* Base portfolio styles - copied unchanged from Experiment 02.
+   New styles for Experiment 04 (theme, controls, buttons) are in extra.css */
+
+/* ---------- Colour scheme (CSS variables) ---------- */
+:root {
+  --primary: #023047;
+  --accent: #219ebc;
+  --highlight: #fb8500;
+  --light-blue: #8ecae6;
+  --yellow: #ffb703;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #22333b;
+  --muted: #6c757d;
+  --border: #d9dde1;
+}
+
+/* ---------- Reset + Box Model ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding + border are included inside the width */
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- Header - Flexbox ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* brand on the left, nav on the right (main axis) */
+  align-items: center;            /* vertically centred (cross axis) */
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--primary);
+  color: #fff;
+  padding: 20px 40px;             /* box model: space inside the header */
+}
+
+.brand h1 {
+  font-size: 26px;
+}
+
+.brand p {
+  font-size: 14px;
+  color: var(--light-blue);
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background: var(--accent);
+}
+
+/* ---------- Generic section "card" ---------- */
+.section {
+  max-width: 1000px;
+  margin: 30px auto;            /* box model: auto left/right margin centres the box */
+  padding: 20px 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 5px solid var(--highlight);
+}
+
+/* ---------- About - Flexbox ---------- */
+.about-box {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 4px solid var(--light-blue);
+  object-fit: cover;
+}
+
+/* ---------- Skills table ---------- */
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skills-table th,
+.skills-table td {
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.skills-table thead {
+  background: var(--yellow);
+}
+
+.skills-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* ---------- Project Gallery - CSS Grid ---------- */
+.gallery-grid {
+  display: grid;
+  /* as many columns as fit, each at least 220px wide, sharing the extra space */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  background: #fafbfc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  font-size: 16px;
+  padding: 10px 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 0 10px 12px;
+}
+
+/* ---------- Contact form - Flexbox column ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column; /* stack labels and inputs vertically */
+  max-width: 420px;
+  gap: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #c7cdd3;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-row input {
+  margin-bottom: 0;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-row input[type="reset"] {
+  background: #adb5bd;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Responsive - media queries ---------- */
+
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;   /* stack brand above the nav */
+    align-items: flex-start;
+    padding: 18px 20px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .section {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* single column gallery */
+  }
+
+  .about-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}
