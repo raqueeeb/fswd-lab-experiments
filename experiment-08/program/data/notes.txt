@@ -1,0 +1,5 @@
+FSWD Lab - Experiment 08 notes
+1. Node.js runs JavaScript outside the browser using the V8 engine.
+2. The event loop lets a single thread handle many I/O tasks without blocking.
+3. Core modules (http, fs, path, os, url) are built in - no npm install needed.
+4. This file is read asynchronously with fs.readFile().
