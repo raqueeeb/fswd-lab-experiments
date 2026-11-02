@@ -1,0 +1,35 @@
+# Experiment 09 - sample requests
+# Open in VS Code with the "REST Client" extension and click "Send Request",
+# or copy the same method/URL/body into Postman or Thunder Client.
+
+@base = http://localhost:5001
+
+### List all projects
+GET {{base}}/api/projects
+
+### Get one project
+GET {{base}}/api/projects/1
+
+### Create a project
+POST {{base}}/api/projects
+Content-Type: application/json
+
+{ "title": "Quiz App", "stack": "React, Node", "rating": 5 }
+
+### Delete a project
+DELETE {{base}}/api/projects/2
+
+### Submit the contact form
+POST {{base}}/api/contact
+Content-Type: application/json
+
+{ "name": "Rahul Kumar", "email": "rahul@example.com", "message": "Hi, interested in collaborating on a project." }
+
+### Validation error (missing fields) -> 400
+POST {{base}}/api/contact
+Content-Type: application/json
+
+{ "name": "Test" }
+
+### Admin view of submitted messages
+GET {{base}}/api/messages
