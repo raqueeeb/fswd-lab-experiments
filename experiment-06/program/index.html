@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Experiment 06 - Fetch API & Async/Await (live GitHub user stats) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Stats - Experiment 06</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="fetchStats.js" defer></script>
+</head>
+<body>
+  <main class="wrapper">
+    <h1>GitHub Profile Stats</h1>
+    <p class="hint">Live data from the public GitHub REST API (api.github.com).</p>
+
+    <form id="searchForm" class="search-row">
+      <input type="text" id="username" value="octocat" placeholder="Enter a GitHub username" aria-label="GitHub username">
+      <button type="submit" id="searchBtn">Fetch</button>
+    </form>
+
+    <p id="loading" class="loading" hidden>Loading data...</p>
+    <p id="errorMsg" class="error" hidden></p>
+
+    <!-- Filled in by fetchStats.js after the data arrives -->
+    <section id="card" class="card" hidden>
+      <img id="avatar" src="data:," alt="GitHub avatar">
+      <div class="info">
+        <h2 id="fullName"></h2>
+        <a id="login" href="https://github.com" target="_blank" rel="noopener"></a>
+        <p id="bio"></p>
+        <div class="stats">
+          <div><strong id="repos"></strong><span>Repos</span></div>
+          <div><strong id="followers"></strong><span>Followers</span></div>
+          <div><strong id="following"></strong><span>Following</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="repoSection" hidden>
+      <h3>Recently updated repositories</h3>
+      <ul id="repoList" class="repo-list"></ul>
+    </section>
+  </main>
+</body>
+</html>
