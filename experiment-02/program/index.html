@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- Experiment 02 - Styling the Portfolio with CSS (Box Model, Flexbox & Grid) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive portfolio styled with the CSS Box Model, Flexbox and Grid (FSWD Lab Experiment 02)">
+  <title>Ananya Rao | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Header / Nav (Flexbox) ===== -->
+  <header class="site-header">
+    <div class="brand">
+      <h1>Ananya Rao</h1>
+      <p>Aspiring Full Stack Developer</p>
+    </div>
+    <nav class="navbar">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#gallery">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== About (Flexbox: image beside text) ===== -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about-box">
+        <img src="images/profile.svg" alt="Profile photo of Ananya Rao" class="profile-pic">
+        <p>
+          I am a final year B.E. (CSE) student learning full stack web development.
+          I enjoy building small, useful projects and I am currently exploring
+          React, Node.js and MongoDB.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Skills table ===== -->
+    <section id="skills" class="section">
+      <h2>Skills &amp; Ratings</h2>
+      <table class="skills-table">
+        <thead>
+          <tr><th scope="col">Skill</th><th scope="col">Rating (out of 5)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HTML &amp; CSS</td><td>4</td></tr>
+          <tr><td>JavaScript</td><td>3</td></tr>
+          <tr><td>React JS</td><td>3</td></tr>
+          <tr><td>Node &amp; Express</td><td>2</td></tr>
+          <tr><td>MongoDB</td><td>2</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== Project Gallery (CSS Grid) ===== -->
+    <section id="gallery" class="section">
+      <h2>Project Gallery</h2>
+      <div class="gallery-grid">
+        <article class="card">
+          <img src="images/project1.svg" alt="Library Management System thumbnail">
+          <h3>Library Management System</h3>
+          <p>Java, MySQL</p>
+        </article>
+        <article class="card">
+          <img src="images/project2.svg" alt="Weather App thumbnail">
+          <h3>Weather App</h3>
+          <p>HTML, CSS, JavaScript</p>
+        </article>
+        <article class="card">
+          <img src="images/project3.svg" alt="Result Portal thumbnail">
+          <h3>Result Portal</h3>
+          <p>PHP, MySQL</p>
+        </article>
+        <article class="card">
+          <img src="images/project4.svg" alt="Chat Application thumbnail">
+          <h3>Chat Application</h3>
+          <p>Node.js, Socket.IO</p>
+        </article>
+        <article class="card">
+          <img src="images/project5.svg" alt="Expense Tracker thumbnail">
+          <h3>Expense Tracker</h3>
+          <p>React, Local Storage</p>
+        </article>
+        <article class="card">
+          <img src="images/project6.svg" alt="Quiz App thumbnail">
+          <h3>Quiz App</h3>
+          <p>JavaScript, JSON</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Contact form (Flexbox column) ===== -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Type your message" required></textarea>
+
+        <div class="btn-row">
+          <input type="submit" value="Send Message">
+          <input type="reset" value="Clear">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ananya Rao. Made for FSWD Lab Experiment 02.</p>
+  </footer>
+
+</body>
+</html>
