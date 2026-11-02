@@ -1,0 +1,175 @@
+/* Experiment 06 - GitHub stats card styles */
+
+* {
+  box-sizing: border-box;
+}
+
+/* make sure the "hidden" attribute wins over display rules like .card { display: flex } */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #eef2f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+  padding: 28px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  color: #023047;
+}
+
+.hint {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.search-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.search-row button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #219ebc;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-row button:disabled {
+  background: #8ecae6;
+  cursor: wait;
+}
+
+.loading {
+  color: #6c757d;
+}
+
+.error {
+  color: #e63946;
+  font-weight: 600;
+}
+
+.card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e2e6ea;
+  border-radius: 6px;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #8ecae6;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #023047;
+}
+
+.info a {
+  font-size: 14px;
+  color: #219ebc;
+}
+
+.info p {
+  margin: 6px 0 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.stats {
+  display: flex;
+  gap: 18px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats strong {
+  display: block;
+  font-size: 16px;
+  color: #219ebc;
+}
+
+.stats span {
+  font-size: 12px;
+  color: #777;
+}
+
+h3 {
+  margin: 20px 0 8px;
+  font-size: 16px;
+  color: #023047;
+}
+
+.repo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repo-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.repo-list a {
+  color: #023047;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.repo-list span {
+  color: #777;
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+}
