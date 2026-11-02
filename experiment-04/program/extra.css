@@ -1,0 +1,108 @@
+/* Experiment 04 - extra styles for the interactive features */
+
+/* ---------- Theme toggle button ---------- */
+.theme-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  background: var(--yellow);
+  color: #23272b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- Add-project form & search box ---------- */
+.add-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.add-form input,
+.search-input {
+  flex: 1 1 200px;
+  padding: 8px 10px;
+  border: 1px solid #c7cdd3;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.search-input {
+  width: 100%;
+  margin: 12px 0 20px;
+}
+
+.add-form button,
+.remove-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: #e63946;
+  margin: 0 10px 12px;
+}
+
+.form-message {
+  min-height: 20px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #e63946;
+}
+
+/* ---------- Card states ---------- */
+.card.highlight {
+  outline: 3px solid var(--yellow);
+}
+
+.counter {
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.empty-message {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Dark theme: JavaScript toggles the "dark" class on <body> ---------- */
+body.dark {
+  --bg: #12181f;
+  --surface: #1c242c;
+  --text: #e8e8e8;
+  --muted: #a5b0bb;
+  --border: #2c3743;
+}
+
+body.dark .site-header {
+  background: #05080c;
+}
+
+body.dark .card {
+  background: #232d37;
+  border-color: #2c3743;
+}
+
+body.dark .skills-table thead {
+  color: #23272b;
+}
+
+body.dark .skills-table tbody tr:nth-child(even) {
+  background: #222b34;
+}
+
+body.dark .contact-form input[type="text"],
+body.dark .contact-form input[type="email"],
+body.dark .contact-form textarea {
+  background: #232d37;
+  color: var(--text);
+  border-color: #3a4652;
+}
