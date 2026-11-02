@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Experiment 01 - Personal Portfolio Page using HTML
+     Semantic tags + image + table (skills & ratings) + contact form -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio page built with semantic HTML5 (FSWD Lab Experiment 01)">
+  <title>Ananya Rao | Portfolio</title>
+  <!-- Only a tiny rule so the table shows borders.
+       All real styling is added with CSS in Experiment 02. -->
+  <style>
+    table, th, td { border: 1px solid #555; border-collapse: collapse; padding: 6px 12px; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header with navigation links ===== -->
+  <header>
+    <h1>Ananya Rao</h1>
+    <p>Aspiring Full Stack Developer</p>
+    <nav>
+      <a href="#about">About</a> |
+      <a href="#skills">Skills</a> |
+      <a href="#projects">Projects</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <hr>
+
+  <main>
+    <!-- ===== About section with a profile image ===== -->
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="images/profile.svg" alt="Profile photo of Ananya Rao" width="140" height="140">
+      <p>
+        I am a final year B.E. (CSE) student learning full stack web development.
+        I enjoy building small, useful projects and I am currently exploring
+        React, Node.js and MongoDB.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- ===== Skills table: skill name + rating out of 5 ===== -->
+    <section id="skills">
+      <h2>Skills &amp; Ratings</h2>
+      <table>
+        <caption>My technical skills (rated out of 5)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Skill</th>
+            <th scope="col">Rating (out of 5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML &amp; CSS</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>React JS</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Node &amp; Express</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>MongoDB</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- ===== Projects: one <article> per project (turned into a gallery in Exp 02) ===== -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article>
+        <h3>Library Management System</h3>
+        <p>Issue and return books, track due dates and fines. Built with Java and MySQL.</p>
+      </article>
+
+      <article>
+        <h3>Weather App</h3>
+        <p>Shows live weather for any city using a public API. Built with HTML, CSS, JavaScript and the Fetch API.</p>
+      </article>
+
+      <article>
+        <h3>Student Result Portal</h3>
+        <p>Students log in to view semester results and grade sheets. Built with PHP and MySQL.</p>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- ===== Contact form: name, email, message ===== -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <!-- action/method decide where and how the data is sent.
+           The form is connected to a real server in Experiments 09-11. -->
+      <form action="#" method="post">
+        <p>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </p>
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </p>
+        <p>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" cols="35" placeholder="Type your message" required></textarea>
+        </p>
+        <p>
+          <input type="submit" value="Send Message">
+          <input type="reset" value="Clear">
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <hr>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2026 Ananya Rao. Made for FSWD Lab Experiment 01.</p>
+  </footer>
+
+</body>
+</html>
