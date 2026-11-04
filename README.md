@@ -1,5 +1,7 @@
 # FSWD Lab Experiments
 
+> 📘 **Case study:** [raqueeb.dev/projects/fswd-lab-experiments](https://raqueeb.dev/projects/fswd-lab-experiments) — architecture, stack and implementation notes.
+
 **Full Stack Web Development Lab (U23CS7L2) – B.E. CSE, VII Semester** · 12 experiments from a plain HTML page to a deployed MERN app, with tested code and viva Q&A for every experiment.
 
 ![Experiments](https://img.shields.io/badge/experiments-12-blue) ![Viva questions](https://img.shields.io/badge/viva_questions-72-green) ![Node.js](https://img.shields.io/badge/node-%3E%3D20.19-brightgreen) ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
